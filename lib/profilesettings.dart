@@ -101,9 +101,9 @@ class ProfileSettingsPage extends StatelessWidget {
                 child: Column(
                   children: [
                     ListTile(
-                      leading: const Icon(Icons.person, color: Colors.white),
+                      leading: const Icon(Icons.person_outline, color: Colors.white),
                       title: const Text(
-                        'Profile Photo',
+                        'Profile',
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
