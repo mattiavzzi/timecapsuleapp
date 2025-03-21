@@ -7,16 +7,12 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: const Color.fromARGB(255, 2, 2, 2),
       extendBodyBehindAppBar: true, // This allows content to go behind AppBar
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: const Icon(
-          Icons.keyboard_arrow_down,
-          color: Colors.white,
-          size: 28,
-        ),
+        automaticallyImplyLeading: false,
         title: const Text(
           'travelgirl_26',
           style: TextStyle(
