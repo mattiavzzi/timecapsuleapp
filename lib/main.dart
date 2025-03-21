@@ -9,6 +9,9 @@ import 'task.dart';
 
 import 'onboarding.dart';
 
+// Add this import at the top with the other imports
+import 'login.dart';
+
 void main() {
   runApp(const MainApp());
 }
@@ -83,6 +86,32 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 child: const Text(
                   'Go to Onboarding',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LoginPage(),
+                    ),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFF616161),
+                  padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+                child: const Text(
+                  'Go to Login',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 16,
