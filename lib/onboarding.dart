@@ -9,7 +9,7 @@ class OnboardingPage extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Center(
         child: Text(
-          'Onboarding',
+          'Onboarding Test',
           style: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,
