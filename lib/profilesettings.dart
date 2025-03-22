@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 
 class _CustomDivider extends StatelessWidget {
-  const _CustomDivider({super.key});
+  const _CustomDivider();
 
   @override
   Widget build(BuildContext context) {
     return Material(
       color: Theme.of(context).dividerColor,
-      child: Divider(height: 0.5, thickness: 0.2, color: Theme.of(context).dividerColor),
+      child: Divider(
+        height: 0.5,
+        thickness: 0.2,
+        color: Theme.of(context).dividerColor,
+      ),
     );
   }
 }
@@ -96,7 +100,10 @@ class ProfileSettingsPage extends StatelessWidget {
               const SizedBox(height: 30),
 
               // ACCOUNT Section
-              Text("Account".toUpperCase(), style: Theme.of(context).textTheme.labelSmall),
+              Text(
+                "Account".toUpperCase(),
+                style: Theme.of(context).textTheme.labelSmall,
+              ),
               const SizedBox(height: 10),
               DecoratedBox(
                 decoration: BoxDecoration(
@@ -111,8 +118,15 @@ class ProfileSettingsPage extends StatelessWidget {
                         AssetImage('lib/assets/icons/avatar.png'),
                         color: Colors.white,
                       ),
-                      title: Text('Profile', style: Theme.of(context).textTheme.labelMedium),
-                      trailing: const Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 16),
+                      title: Text(
+                        'Profile',
+                        style: Theme.of(context).textTheme.labelMedium,
+                      ),
+                      trailing: const Icon(
+                        Icons.arrow_forward_ios,
+                        color: Colors.grey,
+                        size: 16,
+                      ),
                       onTap: () {},
                     ),
                     const _CustomDivider(),
@@ -122,13 +136,23 @@ class ProfileSettingsPage extends StatelessWidget {
                         AssetImage('lib/assets/icons/capsulename.png'),
                         color: Colors.white,
                       ),
-                      title: Text('Capsule Name', style: Theme.of(context).textTheme.labelMedium),
+                      title: Text(
+                        'Capsule Name',
+                        style: Theme.of(context).textTheme.labelMedium,
+                      ),
                       trailing: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Text('@ceo', style: Theme.of(context).textTheme.bodyMedium),
+                          Text(
+                            '@ceo',
+                            style: Theme.of(context).textTheme.bodyMedium,
+                          ),
                           const SizedBox(width: 8),
-                          const Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 16),
+                          const Icon(
+                            Icons.arrow_forward_ios,
+                            color: Colors.grey,
+                            size: 16,
+                          ),
                         ],
                       ),
                       onTap: () {},
@@ -140,13 +164,23 @@ class ProfileSettingsPage extends StatelessWidget {
                         AssetImage('lib/assets/icons/email.png'),
                         color: Colors.white,
                       ),
-                      title: Text('Email', style: Theme.of(context).textTheme.labelMedium),
+                      title: Text(
+                        'Email',
+                        style: Theme.of(context).textTheme.labelMedium,
+                      ),
                       trailing: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Text('ceo@gmail.com', style: Theme.of(context).textTheme.bodyMedium),
+                          Text(
+                            'ceo@gmail.com',
+                            style: Theme.of(context).textTheme.bodyMedium,
+                          ),
                           const SizedBox(width: 8),
-                          const Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 16),
+                          const Icon(
+                            Icons.arrow_forward_ios,
+                            color: Colors.grey,
+                            size: 16,
+                          ),
                         ],
                       ),
                       onTap: () {},
@@ -158,8 +192,15 @@ class ProfileSettingsPage extends StatelessWidget {
                         AssetImage('lib/assets/icons/phone.png'),
                         color: Colors.white,
                       ),
-                      title: Text('Phone', style: Theme.of(context).textTheme.labelMedium),
-                      trailing: const Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 16),
+                      title: Text(
+                        'Phone',
+                        style: Theme.of(context).textTheme.labelMedium,
+                      ),
+                      trailing: const Icon(
+                        Icons.arrow_forward_ios,
+                        color: Colors.grey,
+                        size: 16,
+                      ),
                       onTap: () {},
                     ),
                     const _CustomDivider(),
@@ -169,13 +210,23 @@ class ProfileSettingsPage extends StatelessWidget {
                         AssetImage('lib/assets/icons/Profession.png'),
                         color: Colors.white,
                       ),
-                      title: Text('Profession', style: Theme.of(context).textTheme.labelMedium),
+                      title: Text(
+                        'Profession',
+                        style: Theme.of(context).textTheme.labelMedium,
+                      ),
                       trailing: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Text('Software Engineer', style: Theme.of(context).textTheme.bodyMedium),
+                          Text(
+                            'Software Engineer',
+                            style: Theme.of(context).textTheme.bodyMedium,
+                          ),
                           const SizedBox(width: 8),
-                          const Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 16),
+                          const Icon(
+                            Icons.arrow_forward_ios,
+                            color: Colors.grey,
+                            size: 16,
+                          ),
                         ],
                       ),
                       onTap: () {},
@@ -187,13 +238,23 @@ class ProfileSettingsPage extends StatelessWidget {
                         AssetImage('lib/assets/icons/age.png'),
                         color: Colors.white,
                       ),
-                      title: Text('Age', style: Theme.of(context).textTheme.labelMedium),
+                      title: Text(
+                        'Age',
+                        style: Theme.of(context).textTheme.labelMedium,
+                      ),
                       trailing: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Text('25 - 34', style: Theme.of(context).textTheme.bodyMedium),
+                          Text(
+                            '25 - 34',
+                            style: Theme.of(context).textTheme.bodyMedium,
+                          ),
                           const SizedBox(width: 8),
-                          const Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 16),
+                          const Icon(
+                            Icons.arrow_forward_ios,
+                            color: Colors.grey,
+                            size: 16,
+                          ),
                         ],
                       ),
                       onTap: () {},
@@ -205,8 +266,15 @@ class ProfileSettingsPage extends StatelessWidget {
                         AssetImage('lib/assets/icons/logout.png'),
                         color: Colors.white,
                       ),
-                      title: Text('Log Out', style: Theme.of(context).textTheme.labelMedium),
-                      trailing: const Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 16),
+                      title: Text(
+                        'Log Out',
+                        style: Theme.of(context).textTheme.labelMedium,
+                      ),
+                      trailing: const Icon(
+                        Icons.arrow_forward_ios,
+                        color: Colors.grey,
+                        size: 16,
+                      ),
                       onTap: () {},
                     ),
                   ],
@@ -216,7 +284,10 @@ class ProfileSettingsPage extends StatelessWidget {
               const SizedBox(height: 24),
 
               // PREFERENCES Section
-              Text("Preferences".toUpperCase(), style: Theme.of(context).textTheme.labelSmall),
+              Text(
+                "Preferences".toUpperCase(),
+                style: Theme.of(context).textTheme.labelSmall,
+              ),
               const SizedBox(height: 10),
               DecoratedBox(
                 decoration: BoxDecoration(
@@ -228,25 +299,179 @@ class ProfileSettingsPage extends StatelessWidget {
                     ListTile(
                       horizontalTitleGap: horizontalTitleGap,
                       leading: const ImageIcon(
-                        AssetImage('lib/assets/icons/avatar.png'),
+                        AssetImage('lib/assets/icons/notification.png'),
                         color: Colors.white,
                       ),
-                      title: Text('Notifications', style: Theme.of(context).textTheme.labelMedium),
-                      trailing: const Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 16),
+                      title: Text(
+                        'Notifications',
+                        style: Theme.of(context).textTheme.labelMedium,
+                      ),
+                      trailing: const Icon(
+                        Icons.arrow_forward_ios,
+                        color: Colors.grey,
+                        size: 16,
+                      ),
                       onTap: () {},
                     ),
                     const _CustomDivider(),
                     ListTile(
                       horizontalTitleGap: horizontalTitleGap,
                       leading: const ImageIcon(
-                        AssetImage('lib/assets/icons/avatar.png'),
+                        AssetImage('lib/assets/icons/share.png'),
                         color: Colors.white,
                       ),
                       title: Text(
                         'Share Time Capsule',
                         style: Theme.of(context).textTheme.labelMedium,
                       ),
-                      trailing: const Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 16),
+                      trailing: const Icon(
+                        Icons.arrow_forward_ios,
+                        color: Colors.grey,
+                        size: 16,
+                      ),
+                      onTap: () {},
+                    ),
+                  ],
+                ),
+              ),
+
+              const SizedBox(height: 24),
+
+              // Help & Support Section
+              Text(
+                "Help & Support".toUpperCase(),
+                style: Theme.of(context).textTheme.labelSmall,
+              ),
+              const SizedBox(height: 10),
+              DecoratedBox(
+                decoration: BoxDecoration(
+                  color: const Color(0xFF2A2A2A),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Column(
+                  children: [
+                    ListTile(
+                      horizontalTitleGap: horizontalTitleGap,
+                      leading: const ImageIcon(
+                        AssetImage('lib/assets/icons/chat.png'),
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        'Support Chat',
+                        style: Theme.of(context).textTheme.labelMedium,
+                      ),
+                      trailing: const Icon(
+                        Icons.arrow_forward_ios,
+                        color: Colors.grey,
+                        size: 16,
+                      ),
+                      onTap: () {},
+                    ),
+                    const _CustomDivider(),
+                    ListTile(
+                      horizontalTitleGap: horizontalTitleGap,
+                      leading: const ImageIcon(
+                        AssetImage('lib/assets/icons/faq.png'),
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        'FAQs',
+                        style: Theme.of(context).textTheme.labelMedium,
+                      ),
+                      trailing: const Icon(
+                        Icons.arrow_forward_ios,
+                        color: Colors.grey,
+                        size: 16,
+                      ),
+                      onTap: () {},
+                    ),
+                    const _CustomDivider(),
+                    ListTile(
+                      horizontalTitleGap: horizontalTitleGap,
+                      leading: const ImageIcon(
+                        AssetImage('lib/assets/icons/review.png'),
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        'Write a Review',
+                        style: Theme.of(context).textTheme.labelMedium,
+                      ),
+                      trailing: const Icon(
+                        Icons.arrow_forward_ios,
+                        color: Colors.grey,
+                        size: 16,
+                      ),
+                      onTap: () {},
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 24),
+
+              // Time Capsule Section
+              Text(
+                "TimeCapsule V1.0".toUpperCase(),
+                style: Theme.of(context).textTheme.labelSmall,
+              ),
+              const SizedBox(height: 10),
+              DecoratedBox(
+                decoration: BoxDecoration(
+                  color: const Color(0xFF2A2A2A),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Column(
+                  children: [
+                    ListTile(
+                      horizontalTitleGap: horizontalTitleGap,
+                      leading: const ImageIcon(
+                        AssetImage('lib/assets/icons/suggestfeatures.png'),
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        'Suggest Features',
+                        style: Theme.of(context).textTheme.labelMedium,
+                      ),
+                      trailing: const Icon(
+                        Icons.arrow_forward_ios,
+                        color: Colors.grey,
+                        size: 16,
+                      ),
+                      onTap: () {},
+                    ),
+                    const _CustomDivider(),
+                    ListTile(
+                      horizontalTitleGap: horizontalTitleGap,
+                      leading: const ImageIcon(
+                        AssetImage('lib/assets/icons/paper.png'),
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        'Documentation',
+                        style: Theme.of(context).textTheme.labelMedium,
+                      ),
+                      trailing: const Icon(
+                        Icons.arrow_forward_ios,
+                        color: Colors.grey,
+                        size: 16,
+                      ),
+                      onTap: () {},
+                    ),
+                    const _CustomDivider(),
+                    ListTile(
+                      horizontalTitleGap: horizontalTitleGap,
+                      leading: const ImageIcon(
+                        AssetImage('lib/assets/icons/info.png'),
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        'About TimeCapsule',
+                        style: Theme.of(context).textTheme.labelMedium,
+                      ),
+                      trailing: const Icon(
+                        Icons.arrow_forward_ios,
+                        color: Colors.grey,
+                        size: 16,
+                      ),
                       onTap: () {},
                     ),
                   ],

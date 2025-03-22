@@ -55,39 +55,66 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               const Text(
                 'Focus',
-                style: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const OnboardingPage()),
+                    MaterialPageRoute(
+                      builder: (context) => const OnboardingPage(),
+                    ),
                   );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF616161),
-                  padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 30,
+                    vertical: 15,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
                 ),
                 child: const Text(
                   'Go to Onboarding',
-                  style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginPage()),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF616161),
-                  padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 30,
+                    vertical: 15,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
                 ),
                 child: const Text(
                   'Go to Login',
-                  style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ],
@@ -111,14 +138,27 @@ class _HomeScreenState extends State<HomeScreen> {
               Navigator.push(
                 context,
                 PageRouteBuilder(
-                  pageBuilder: (context, animation, secondaryAnimation) => const NotificationPage(),
-                  transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                  pageBuilder:
+                      (context, animation, secondaryAnimation) =>
+                          const NotificationPage(),
+                  transitionsBuilder: (
+                    context,
+                    animation,
+                    secondaryAnimation,
+                    child,
+                  ) {
                     const begin = Offset(-1.0, 0.0);
                     const end = Offset.zero;
                     const curve = Curves.easeOutCubic;
-                    var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+                    var tween = Tween(
+                      begin: begin,
+                      end: end,
+                    ).chain(CurveTween(curve: curve));
                     var offsetAnimation = animation.drive(tween);
-                    return SlideTransition(position: offsetAnimation, child: child);
+                    return SlideTransition(
+                      position: offsetAnimation,
+                      child: child,
+                    );
                   },
                   transitionDuration: const Duration(milliseconds: 700),
                 ),
@@ -151,7 +191,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: MediaQuery.of(context).size.height * 0.9,
                         decoration: const BoxDecoration(
                           color: Color(0xFF333333),
-                          borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                          borderRadius: BorderRadius.vertical(
+                            top: Radius.circular(20),
+                          ),
                         ),
                         child: Column(
                           children: [
@@ -185,7 +227,10 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       body: SingleChildScrollView(
-        child: SizedBox(height: MediaQuery.of(context).size.height, child: _getPage()),
+        child: SizedBox(
+          height: MediaQuery.of(context).size.height,
+          child: _getPage(),
+        ),
       ),
       bottomNavigationBar: Container(
         height: 70,
@@ -306,10 +351,16 @@ class _NotAnimatedBottomBarState extends State<NotAnimatedBottomBar> {
               Expanded(
                 child: TextButton(
                   style: ButtonStyle(
-                    overlayColor: WidgetStateProperty.all(const Color(0xFF616161).withOpacity(0.3)),
-                    padding: WidgetStateProperty.all(const EdgeInsets.symmetric(vertical: 10)),
+                    overlayColor: WidgetStateProperty.all(
+                      const Color(0xFF616161).withOpacity(0.3),
+                    ),
+                    padding: WidgetStateProperty.all(
+                      const EdgeInsets.symmetric(vertical: 10),
+                    ),
                     backgroundColor: WidgetStateProperty.all(
-                      _selectedIndex == 0 ? const Color(0xFF616161) : Colors.transparent,
+                      _selectedIndex == 0
+                          ? const Color(0xFF616161)
+                          : Colors.transparent,
                     ),
                     animationDuration: const Duration(milliseconds: 200),
                   ),
@@ -327,10 +378,16 @@ class _NotAnimatedBottomBarState extends State<NotAnimatedBottomBar> {
               Expanded(
                 child: TextButton(
                   style: ButtonStyle(
-                    overlayColor: WidgetStateProperty.all(const Color(0xFF616161).withOpacity(0.3)),
-                    padding: WidgetStateProperty.all(const EdgeInsets.symmetric(vertical: 10)),
+                    overlayColor: WidgetStateProperty.all(
+                      const Color(0xFF616161).withOpacity(0.3),
+                    ),
+                    padding: WidgetStateProperty.all(
+                      const EdgeInsets.symmetric(vertical: 10),
+                    ),
                     backgroundColor: WidgetStateProperty.all(
-                      _selectedIndex == 1 ? const Color(0xFF616161) : Colors.transparent,
+                      _selectedIndex == 1
+                          ? const Color(0xFF616161)
+                          : Colors.transparent,
                     ),
                     animationDuration: const Duration(milliseconds: 200),
                   ),
@@ -349,9 +406,13 @@ class _NotAnimatedBottomBarState extends State<NotAnimatedBottomBar> {
                 child: TextButton(
                   style: ButtonStyle(
                     overlayColor: WidgetStateProperty.all(Colors.transparent),
-                    padding: WidgetStateProperty.all(const EdgeInsets.symmetric(vertical: 10)),
+                    padding: WidgetStateProperty.all(
+                      const EdgeInsets.symmetric(vertical: 10),
+                    ),
                     backgroundColor: WidgetStateProperty.all(
-                      _selectedIndex == 2 ? const Color(0xFF616161) : Colors.transparent,
+                      _selectedIndex == 2
+                          ? const Color(0xFF616161)
+                          : Colors.transparent,
                     ),
                     animationDuration: const Duration(milliseconds: 200),
                   ),

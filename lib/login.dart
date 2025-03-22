@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
   @override
   _LoginPageState createState() => _LoginPageState();
 }
@@ -23,10 +25,7 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 Text(
                   'Welcome Back',
-                  style: TextStyle(
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 48),
                 TextFormField(
@@ -70,10 +69,7 @@ class _LoginPageState extends State<LoginPage> {
                     width: double.infinity,
                     padding: EdgeInsets.symmetric(vertical: 16),
                     child: Center(
-                      child: Text(
-                        'Login',
-                        style: TextStyle(fontSize: 16),
-                      ),
+                      child: Text('Login', style: TextStyle(fontSize: 16)),
                     ),
                   ),
                 ),
