@@ -166,33 +166,50 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: const EdgeInsets.only(right: 20, top: 10),
             child: GestureDetector(
               onTap: () {
-                Navigator.push(
-                  context,
-                  PageRouteBuilder(
-                    pageBuilder:
-                        (context, animation, secondaryAnimation) => const ProfileSettingsPage(),
-                    transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                      const begin = Offset(1.0, 0.0);
-                      const end = Offset.zero;
-                      const curve = Curves.easeOutQuint;
-                      var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-                      var offsetAnimation = animation.drive(tween);
-                      return SlideTransition(position: offsetAnimation, child: child);
-                    },
-                    transitionDuration: const Duration(milliseconds: 500),
+                showModalBottomSheet(
+                  context: context,
+                  isScrollControlled: true,
+                  backgroundColor: Colors.transparent,
+                  builder: (context) => Container(
+                    height: MediaQuery.of(context).size.height * 0.9,
+                    decoration: const BoxDecoration(
+                      color: Color(0xFF333333),
+                      borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                    ),
+                    child: Column(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.symmetric(vertical: 10),
+                          width: 40,
+                          height: 4,
+                          decoration: BoxDecoration(
+                            color: Colors.grey,
+                            borderRadius: BorderRadius.circular(2),
+                          ),
+                        ),
+                        const Expanded(
+                          child: ProfileSettingsPage(),
+                        ),
+                      ],
+                    ),
                   ),
                 );
               },
               child: CircleAvatar(
                 radius: 15,
                 backgroundColor: const Color.fromARGB(0, 66, 66, 66),
-                child: Image.asset('lib/assets/user.png', width: 40, height: 40),
+                child: Image.asset('lib/assets/setting.png', width: 30, height: 20),
               ),
             ),
           ),
         ],
       ),
-      body: _getPage(),
+      body: SingleChildScrollView(
+        child: Container(
+          height: MediaQuery.of(context).size.height,
+          child: _getPage(),
+        ),
+      ),
       bottomNavigationBar: Container(
         height: 70,
         padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
