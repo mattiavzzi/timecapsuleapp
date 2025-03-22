@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
-import 'core/colors.dart';
-
 class _CustomDivider extends StatelessWidget {
   const _CustomDivider({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Divider(height: 0.5, thickness: 0.2, color: AppColors.dividerColor);
+    return Material(
+      color: Theme.of(context).dividerColor,
+      child: Divider(height: 0.5, thickness: 0.2, color: Theme.of(context).dividerColor),
+    );
   }
 }
 
@@ -95,16 +96,9 @@ class ProfileSettingsPage extends StatelessWidget {
               const SizedBox(height: 30),
 
               // ACCOUNT Section
-              const Text(
-                "Account",
-                style: TextStyle(
-                  color: Color.fromARGB(255, 255, 255, 255),
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
+              Text("Account".toUpperCase(), style: Theme.of(context).textTheme.labelSmall),
               const SizedBox(height: 10),
-              Container(
+              DecoratedBox(
                 decoration: BoxDecoration(
                   color: const Color(0xFF2A2A2A),
                   borderRadius: BorderRadius.circular(12),
@@ -219,55 +213,38 @@ class ProfileSettingsPage extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 30),
+              const SizedBox(height: 24),
 
-              // SOCIAL Section
-              const Text(
-                "Social",
-                style: TextStyle(color: Colors.grey, fontSize: 14, fontWeight: FontWeight.w500),
-              ),
+              // PREFERENCES Section
+              Text("Preferences".toUpperCase(), style: Theme.of(context).textTheme.labelSmall),
               const SizedBox(height: 10),
-              Container(
+              DecoratedBox(
                 decoration: BoxDecoration(
-                  color: const Color(0xFF222222),
+                  color: const Color(0xFF2A2A2A),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Column(
                   children: [
                     ListTile(
-                      leading: const Icon(Icons.people_outline, color: Colors.white),
-                      title: const Text('Friends', style: TextStyle(color: Colors.white)),
+                      horizontalTitleGap: horizontalTitleGap,
+                      leading: const ImageIcon(
+                        AssetImage('lib/assets/icons/avatar.png'),
+                        color: Colors.white,
+                      ),
+                      title: Text('Notifications', style: Theme.of(context).textTheme.labelMedium),
                       trailing: const Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 16),
                       onTap: () {},
                     ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 70),
-                      child: Text(
-                        "Find your friends who use Opal",
-                        style: TextStyle(color: Colors.grey, fontSize: 12),
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                    const Divider(height: 1, color: Colors.grey, indent: 70, endIndent: 20),
+                    const _CustomDivider(),
                     ListTile(
-                      leading: const Icon(Icons.card_giftcard_outlined, color: Colors.white),
-                      title: const Text(
-                        'Enter Referral Code',
-                        style: TextStyle(color: Colors.white),
+                      horizontalTitleGap: horizontalTitleGap,
+                      leading: const ImageIcon(
+                        AssetImage('lib/assets/icons/avatar.png'),
+                        color: Colors.white,
                       ),
-                      trailing: const Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 16),
-                      onTap: () {},
-                    ),
-                    const Divider(
-                      height: 0.5,
-                      thickness: 0.2,
-                      color: Color.fromARGB(127, 255, 255, 255),
-                    ),
-                    ListTile(
-                      leading: const Icon(Icons.card_giftcard_outlined, color: Colors.white),
-                      title: const Text(
-                        'Enter Referral Code',
-                        style: TextStyle(color: Colors.white),
+                      title: Text(
+                        'Share Time Capsule',
+                        style: Theme.of(context).textTheme.labelMedium,
                       ),
                       trailing: const Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 16),
                       onTap: () {},
@@ -275,15 +252,6 @@ class ProfileSettingsPage extends StatelessWidget {
                   ],
                 ),
               ),
-
-              const SizedBox(height: 30),
-
-              // PREFERENCES Section
-              const Text(
-                "Preferences",
-                style: TextStyle(color: Colors.grey, fontSize: 14, fontWeight: FontWeight.w500),
-              ),
-              const SizedBox(height: 40),
             ],
           ),
         ),
