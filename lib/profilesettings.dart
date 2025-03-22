@@ -1,10 +1,24 @@
 import 'package:flutter/material.dart';
 
+import 'core/colors.dart';
+
+class _CustomDivider extends StatelessWidget {
+  const _CustomDivider({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Divider(height: 0.5, thickness: 0.2, color: AppColors.dividerColor);
+  }
+}
+
 class ProfileSettingsPage extends StatelessWidget {
   const ProfileSettingsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // const const _CustomDivider(), = Divider(height: 0.5, thickness: 0.2, color: AppColors.dividerColor);
+    const horizontalTitleGap = 10.0;
+
     return Scaffold(
       backgroundColor: const Color(0xFF333333), // Changed to dark gray color
       appBar: null, // Remove the AppBar completely
@@ -38,10 +52,7 @@ class ProfileSettingsPage extends StatelessWidget {
                       children: [
                         const Text(
                           "Upgrade to focus better with ",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                          ),
+                          style: TextStyle(color: Colors.white, fontSize: 16),
                         ),
                         const Icon(Icons.bolt, color: Colors.white, size: 16),
                         const Text(
@@ -80,9 +91,9 @@ class ProfileSettingsPage extends StatelessWidget {
                   ],
                 ),
               ),
-              
+
               const SizedBox(height: 30),
-              
+
               // ACCOUNT Section
               const Text(
                 "Account",
@@ -95,170 +106,125 @@ class ProfileSettingsPage extends StatelessWidget {
               const SizedBox(height: 10),
               Container(
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 65, 65, 65),
+                  color: const Color(0xFF2A2A2A),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Column(
                   children: [
                     ListTile(
-                      leading: const Icon(Icons.person_outline, color: Colors.white),
-                      title: const Text(
-                        'Profile',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      horizontalTitleGap: horizontalTitleGap,
+                      leading: const ImageIcon(
+                        AssetImage('lib/assets/icons/avatar.png'),
+                        color: Colors.white,
                       ),
+                      title: Text('Profile', style: Theme.of(context).textTheme.labelMedium),
                       trailing: const Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 16),
                       onTap: () {},
                     ),
-                    const Divider(
-                      height: 0.5,
-                      thickness: 0.2,
-                      color: Color.fromARGB(127, 255, 255, 255),
-                    ),
+                    const _CustomDivider(),
                     ListTile(
-                      leading: const Icon(Icons.diamond_outlined, color: Colors.white),
-                      title: const Text(
-                        'Capsule Name',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      horizontalTitleGap: horizontalTitleGap,
+                      leading: const ImageIcon(
+                        AssetImage('lib/assets/icons/capsulename.png'),
+                        color: Colors.white,
                       ),
+                      title: Text('Capsule Name', style: Theme.of(context).textTheme.labelMedium),
                       trailing: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          const Text(
-                            '@ceo',
-                            style: TextStyle(color: Colors.grey),
-                          ),
+                          Text('@ceo', style: Theme.of(context).textTheme.bodyMedium),
                           const SizedBox(width: 8),
                           const Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 16),
                         ],
                       ),
                       onTap: () {},
                     ),
-                    const Divider(
-                      height: 0.5,
-                      thickness: 0.2,
-                      color: Color.fromARGB(127, 255, 255, 255),
-                    ),
+                    const _CustomDivider(),
                     ListTile(
-                      leading: const Icon(Icons.email_outlined, color: Colors.white),
-                      title: const Text(
-                        'Email',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      horizontalTitleGap: horizontalTitleGap,
+                      leading: ImageIcon(
+                        AssetImage('lib/assets/icons/email.png'),
+                        color: Colors.white,
                       ),
+                      title: Text('Email', style: Theme.of(context).textTheme.labelMedium),
                       trailing: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          const Text(
-                            'ceo@gmail.com',
-                            style: TextStyle(color: Colors.grey),
-                          ),
+                          Text('ceo@gmail.com', style: Theme.of(context).textTheme.bodyMedium),
                           const SizedBox(width: 8),
                           const Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 16),
                         ],
                       ),
                       onTap: () {},
                     ),
-                    const Divider(
-                      height: 0.5,
-                      thickness: 0.2,
-                      color: Color.fromARGB(127, 255, 255, 255),
-                    ),
+                    const _CustomDivider(),
                     ListTile(
-                      leading: const Icon(Icons.phone_outlined, color: Colors.white),
-                      title: const Text(
-                        'Phone',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      horizontalTitleGap: horizontalTitleGap,
+                      leading: const ImageIcon(
+                        AssetImage('lib/assets/icons/phone.png'),
+                        color: Colors.white,
                       ),
+                      title: Text('Phone', style: Theme.of(context).textTheme.labelMedium),
                       trailing: const Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 16),
                       onTap: () {},
                     ),
-                    const Divider(
-                      height: 0.5,
-                      thickness: 0.2,
-                      color: Color.fromARGB(127, 255, 255, 255),
-                    ),
+                    const _CustomDivider(),
                     ListTile(
-                      leading: const Icon(Icons.work_outline, color: Colors.white),
-                      title: const Text(
-                        'Profession',
-                        style: TextStyle(color: Colors.white),
+                      horizontalTitleGap: horizontalTitleGap,
+                      leading: const ImageIcon(
+                        AssetImage('lib/assets/icons/Profession.png'),
+                        color: Colors.white,
                       ),
+                      title: Text('Profession', style: Theme.of(context).textTheme.labelMedium),
                       trailing: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          const Text(
-                            'Software Engineer',
-                            style: TextStyle(color: Colors.grey),
-                          ),
+                          Text('Software Engineer', style: Theme.of(context).textTheme.bodyMedium),
                           const SizedBox(width: 8),
                           const Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 16),
                         ],
                       ),
                       onTap: () {},
                     ),
-                    const Divider(
-                      height: 0.5,
-                      thickness: 0.2,
-                      color: Color.fromARGB(127, 255, 255, 255),
-                    ),
+                    const _CustomDivider(),
                     ListTile(
-                      leading: const Icon(Icons.cake_outlined, color: Colors.white),
-                      title: const Text(
-                        'Age',
-                        style: TextStyle(color: Colors.white),
+                      horizontalTitleGap: horizontalTitleGap,
+                      leading: const ImageIcon(
+                        AssetImage('lib/assets/icons/age.png'),
+                        color: Colors.white,
                       ),
+                      title: Text('Age', style: Theme.of(context).textTheme.labelMedium),
                       trailing: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          const Text(
-                            '25 - 34',
-                            style: TextStyle(color: Colors.grey),
-                          ),
+                          Text('25 - 34', style: Theme.of(context).textTheme.bodyMedium),
                           const SizedBox(width: 8),
                           const Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 16),
                         ],
                       ),
                       onTap: () {},
                     ),
-                    const Divider(
-                      height: 0.5,
-                      thickness: 0.2,
-                      color: Color.fromARGB(127, 255, 255, 255),
-                    ),
+                    const _CustomDivider(),
                     ListTile(
-                      leading: const Icon(Icons.logout, color: Colors.white),
-                      title: const Text(
-                        'Log Out',
-                        style: TextStyle(color: Colors.white),
+                      horizontalTitleGap: horizontalTitleGap,
+                      leading: const ImageIcon(
+                        AssetImage('lib/assets/icons/logout.png'),
+                        color: Colors.white,
                       ),
+                      title: Text('Log Out', style: Theme.of(context).textTheme.labelMedium),
                       trailing: const Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 16),
                       onTap: () {},
                     ),
                   ],
                 ),
               ),
-              
+
               const SizedBox(height: 30),
-              
+
               // SOCIAL Section
               const Text(
                 "Social",
-                style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                ),
+                style: TextStyle(color: Colors.grey, fontSize: 14, fontWeight: FontWeight.w500),
               ),
               const SizedBox(height: 10),
               Container(
@@ -270,10 +236,7 @@ class ProfileSettingsPage extends StatelessWidget {
                   children: [
                     ListTile(
                       leading: const Icon(Icons.people_outline, color: Colors.white),
-                      title: const Text(
-                        'Friends',
-                        style: TextStyle(color: Colors.white),
-                      ),
+                      title: const Text('Friends', style: TextStyle(color: Colors.white)),
                       trailing: const Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 16),
                       onTap: () {},
                     ),
@@ -312,17 +275,13 @@ class ProfileSettingsPage extends StatelessWidget {
                   ],
                 ),
               ),
-              
+
               const SizedBox(height: 30),
-              
+
               // PREFERENCES Section
               const Text(
                 "Preferences",
-                style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                ),
+                style: TextStyle(color: Colors.grey, fontSize: 14, fontWeight: FontWeight.w500),
               ),
               const SizedBox(height: 40),
             ],

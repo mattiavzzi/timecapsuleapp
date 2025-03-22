@@ -1,16 +1,15 @@
 import 'package:animated_toggle/animated_toggle.dart';
+import 'package:apptest/core/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inner_shadow/flutter_inner_shadow.dart';
 
+// Add this import at the top with the other imports
+import 'login.dart';
 import 'notification.dart';
+import 'onboarding.dart';
 import 'profile.dart';
 import 'profilesettings.dart';
 import 'task.dart';
-
-import 'onboarding.dart';
-
-// Add this import at the top with the other imports
-import 'login.dart';
 
 void main() {
   runApp(const MainApp());
@@ -21,16 +20,7 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-          backgroundColor: Colors.black,
-          selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.grey,
-        ),
-      ),
-      home: const HomeScreen(),
-    );
+    return MaterialApp(theme: appTheme, home: const HomeScreen());
   }
 }
 
@@ -72,51 +62,32 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                      builder: (context) => const OnboardingPage(),
-                    ),
+                    MaterialPageRoute(builder: (context) => const OnboardingPage()),
                   );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF616161),
                   padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
                 ),
                 child: const Text(
                   'Go to Onboarding',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
                 ),
               ),
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => LoginPage(),
-                    ),
-                  );
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF616161),
                   padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
                 ),
                 child: const Text(
                   'Go to Login',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
                 ),
               ),
             ],
@@ -153,11 +124,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               );
             },
-            child: Image.asset(
-              'lib/assets/notification.png',
-              width: 10,
-              height: 10,
+            // child: Image.asset(
+            //   'assets/icons/notification.png',
+            //   width: 10,
+            //   height: 10,
+            //   color: Colors.white,
+            // ),
+            child: ImageIcon(
+              const AssetImage('lib/assets/icons/notification.png'),
               color: Colors.white,
+              size: 20,
             ),
           ),
         ),
@@ -170,45 +146,46 @@ class _HomeScreenState extends State<HomeScreen> {
                   context: context,
                   isScrollControlled: true,
                   backgroundColor: Colors.transparent,
-                  builder: (context) => Container(
-                    height: MediaQuery.of(context).size.height * 0.9,
-                    decoration: const BoxDecoration(
-                      color: Color(0xFF333333),
-                      borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-                    ),
-                    child: Column(
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.symmetric(vertical: 10),
-                          width: 40,
-                          height: 4,
-                          decoration: BoxDecoration(
-                            color: Colors.grey,
-                            borderRadius: BorderRadius.circular(2),
-                          ),
+                  builder:
+                      (context) => Container(
+                        height: MediaQuery.of(context).size.height * 0.9,
+                        decoration: const BoxDecoration(
+                          color: Color(0xFF333333),
+                          borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
                         ),
-                        const Expanded(
-                          child: ProfileSettingsPage(),
+                        child: Column(
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.symmetric(vertical: 10),
+                              width: 40,
+                              height: 4,
+                              decoration: BoxDecoration(
+                                color: Colors.grey,
+                                borderRadius: BorderRadius.circular(2),
+                              ),
+                            ),
+                            const Expanded(child: ProfileSettingsPage()),
+                          ],
                         ),
-                      ],
-                    ),
-                  ),
+                      ),
                 );
               },
               child: CircleAvatar(
                 radius: 15,
                 backgroundColor: const Color.fromARGB(0, 66, 66, 66),
-                child: Image.asset('lib/assets/setting.png', width: 30, height: 20),
+                // child: Image.asset('lib/assets/setting.png', width: 30, height: 20),
+                child: ImageIcon(
+                  const AssetImage('lib/assets/icons/setting.png'),
+                  color: Colors.white,
+                  size: 20,
+                ),
               ),
             ),
           ),
         ],
       ),
       body: SingleChildScrollView(
-        child: Container(
-          height: MediaQuery.of(context).size.height,
-          child: _getPage(),
-        ),
+        child: SizedBox(height: MediaQuery.of(context).size.height, child: _getPage()),
       ),
       bottomNavigationBar: Container(
         height: 70,
